@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.builder;
 /**
  @author   Volodymyr Lakusta
  @project   vsem2
@@ -42,6 +42,9 @@ public class Person {
         this.hasChild = hasChild;
         this.hasJob = hasJob;
         this.speakingLanguages = speakingLanguages;
+    }
+
+    public Person() {
     }
 
     public String getFirstName() {
@@ -150,5 +153,24 @@ public class Person {
 
     public int getAge(){
         return (int) ChronoUnit.DAYS.between(dateOfBirth, LocalDate.now());
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender='" + gender + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", hasDriverLicence=" + hasDriverLicence +
+                ", nationality='" + nationality + '\'' +
+                ", maritalStatus='" + maritalStatus + '\'' +
+                ", hasChild=" + hasChild +
+                ", hasJob=" + hasJob +
+                ", speakingLanguages='" + speakingLanguages + '\'' +
+                '}';
     }
 }
